@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Báo Đông Nam Á than phiền kết quả chia bảng U23 Asian Cup";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+<style>
+    .fck_detail {
+        margin-bottom: 20px;
+        margin-right: 50px;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        border: 1px solid #ddd;
+        background-color: #f0f0f0;
+        color: #333;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #00cccc;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    tr {
+        color: #333;
+        background-color: #dfcfbe;
+    }
+
+
+</style>
+
+
+
+<div class="container">
+    <div class="tintuc">
+        <div class="sidebar-1">
+            <article class="fck_detail ">
+                <h1>@Model.TieuDe </h1>
+                <p>@Model.MoTa</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Bảng A</th>
+                            <th>Bảng B</th>
+                            <th>Bảng C</th>
+                            <th>Bảng D</th>
+                        </tr>
+                        <tr>
+                            <td>Qatar</td>
+                            <td>Nhật Bản</td>
+                            <td>Arab Saudi</td>
+                            <td>Uzbekistan</td>
+                        </tr>
+                        <tr>
+                            <td>Australia</td>
+                            <td>Hàn Quốc</td>
+                            <td>Iraq</td>
+                            <td>Việt Nam</td>
+                        </tr>
+                        <tr>
+                            <td>Jordan</td>
+                            <td>UAE</td>
+                            <td>Thái Lan</td>
+                            <td>Kuwait</td>
+                        </tr>
+                        <tr>
+                            <td>Indonesia</td>
+                            <td>Trung Quốc</td>
+                            <td>Tajikistan</td>
+                            <td>Malaysia</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>@Html.Raw(Model.NoiDung1)</div>
+                <img src="@Url.Content("~/Content/img/indo.png")" alt="" class="img-fluid">
+                <p>HLV Shin Tae-yong nhắc nhở cầu thủ Indonesia trong trận gặp Turkmenistan tại lượt ba vòng loại bảng K U23 châu Á trên sân Manahan, Solo, Indonesia ngày 12/9/2023.</p>
+                <div>@Html.Raw(Model.NoiDung2)</div>
+            </article>
+        </div>
+    </div>
+</div>

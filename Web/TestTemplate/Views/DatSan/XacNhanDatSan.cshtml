@@ -1,0 +1,26 @@
+﻿@model TestTemplate.Models.DatSan
+@{
+    ViewBag.Title = "XacNhanDatSan";
+    Layout = "~/Views/Shared/LayoutDatSan.cshtml";
+    var loaisan = TempData["Loaisan"] as string;
+}
+
+
+<div class="container">
+    <h4>Thông tin đặt sân:</h4>
+    <p>@Session["ten_coso"]</p>
+    <p>Loại sân: @loaisan</p>
+    <p>Mã Sân: @Model.ma_San</p>
+    <p>Thời gian trận đấu: @Model.ngayDatSan @Model.gioBatDau @Model.gioKetThuc</p>
+
+    <form method="post" action="@Url.Action("XacNhanDatSan", "DatSan")">
+        @Html.HiddenFor(model => model.ma_San)
+        @Html.HiddenFor(model => model.ngayDatSan)
+        @Html.HiddenFor(model => model.gioBatDau)
+        @Html.HiddenFor(model => model.gioKetThuc)
+
+        <input type="submit" name="confirmed" value="Xác nhận" />
+        <a href="@Url.Action("Index", "DatSan", new { id_coso = Session["id_coso"], ten_coso = Session["ten_coso"] })">Hủy bỏ</a>
+    </form>
+</div>
+

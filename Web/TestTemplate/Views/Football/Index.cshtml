@@ -1,0 +1,43 @@
+﻿@using TestTemplate.Models
+@model IEnumerable<CoSo>
+
+@{
+    ViewBag.Title = "Football";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+    ViewBag.active = 2;
+}
+
+<!-- Property List Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-0 gx-5 align-items-end">
+            <div class="col-lg-6">
+                <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
+                    <h1 class="mb-3">Sân bóng đá</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane fade show p-0 active">
+                <div class="row g-4">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="position-relative overflow-hidden">
+                                    <a href="@Url.Action("Index", "DatSan", new { id_coso = item.MaCS, ten_coso = item.TenCS })"><img class="img-fluid" src="@Url.Content("~/Content/img/" + item.HinhAnh)" alt=""></a>
+                                </div>
+                                <div class="p-4 pb-0">
+                                    <h5 class="text-primary mb-3">@item.MucGia</h5>
+                                    <a class="d-block h5 mb-2" href="@item.LinkMap">@item.TenCS</a>
+                                    <p><i class="fa fa-map-marker-alt text-primary me-2"></i>@item.DiaChi</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
